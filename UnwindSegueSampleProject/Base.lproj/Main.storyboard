@@ -20,7 +20,7 @@
                         <color key="backgroundColor" red="1" green="0.36600776010000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Red" id="6ve-XH-vBl">
-                        <barButtonItem key="rightBarButtonItem" title="Next &gt;" id="oR5-8g-cbQ">
+                        <barButtonItem key="rightBarButtonItem" title="Green &gt;" id="oR5-8g-cbQ">
                             <connections>
                                 <segue destination="TRq-Ba-arr" kind="show" id="5bo-va-GVT"/>
                             </connections>
@@ -43,41 +43,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGv-wO-WrN">
-                                <rect key="frame" x="200" y="278" width="200" height="44"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="huF-6v-k0B">
+                                <rect key="frame" x="200" y="226" width="200" height="148"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGv-wO-WrN">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="mGv-wO-WrN" secondAttribute="height" multiplier="50:11" id="9Po-dY-vuk"/>
+                                            <constraint firstAttribute="width" constant="136" id="RFN-7P-GSu"/>
+                                            <constraint firstAttribute="height" constant="44" id="Wvh-LJ-7dW"/>
+                                            <constraint firstAttribute="width" constant="200" id="XnM-M2-P31"/>
+                                            <constraint firstAttribute="height" constant="30" id="iOj-wR-An9"/>
+                                        </constraints>
+                                        <state key="normal" title="To Blue &gt;">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9Po-dY-vuk"/>
+                                                <exclude reference="RFN-7P-GSu"/>
+                                                <exclude reference="iOj-wR-An9"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="JPA-NK-g3R" kind="show" id="QaY-H5-b0p"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2q-AS-3OQ">
+                                        <rect key="frame" x="0.0" y="104" width="200" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.36600776010000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="A2c-cO-iPe"/>
+                                            <constraint firstAttribute="width" constant="200" id="Hau-XC-2GI"/>
+                                        </constraints>
+                                        <state key="normal" title="&lt; Unwind to Red">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="e4T-Za-ege" kind="unwind" identifier="UnwindGreenToRedSegueID" unwindAction="unwindToRedVC:" id="Mgf-Pk-xtl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="mGv-wO-WrN" secondAttribute="height" multiplier="50:11" id="9Po-dY-vuk"/>
-                                    <constraint firstAttribute="width" constant="136" id="RFN-7P-GSu"/>
-                                    <constraint firstAttribute="height" constant="44" id="Wvh-LJ-7dW"/>
-                                    <constraint firstAttribute="width" constant="200" id="XnM-M2-P31"/>
-                                    <constraint firstAttribute="height" constant="30" id="iOj-wR-An9"/>
+                                    <constraint firstAttribute="width" constant="200" id="afu-lf-Um5"/>
                                 </constraints>
-                                <state key="normal" title="To Blue"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9Po-dY-vuk"/>
-                                        <exclude reference="RFN-7P-GSu"/>
-                                        <exclude reference="iOj-wR-An9"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="JPA-NK-g3R" kind="show" id="6FC-nA-Cfg"/>
-                                </connections>
-                            </button>
+                            </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-nG-A9f">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="BFk-24-4h3"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="Wux-pw-4EX"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.61176472900000001" green="0.77647066119999997" blue="0.32549020649999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="mGv-wO-WrN" firstAttribute="centerY" secondItem="ME4-vH-GWi" secondAttribute="centerY" id="8Bm-rf-KHf"/>
-                            <constraint firstItem="mGv-wO-WrN" firstAttribute="centerX" secondItem="ME4-vH-GWi" secondAttribute="centerX" id="zvD-qb-b7t"/>
+                            <constraint firstItem="hDv-nG-A9f" firstAttribute="top" secondItem="ME4-vH-GWi" secondAttribute="top" id="91A-85-EDq"/>
+                            <constraint firstItem="huF-6v-k0B" firstAttribute="centerY" secondItem="ME4-vH-GWi" secondAttribute="centerY" id="LiR-HO-Pjf"/>
+                            <constraint firstItem="huF-6v-k0B" firstAttribute="centerX" secondItem="ME4-vH-GWi" secondAttribute="centerX" id="XTw-nC-yvW"/>
+                            <constraint firstItem="hDv-nG-A9f" firstAttribute="leading" secondItem="ME4-vH-GWi" secondAttribute="leading" id="egI-xh-Gnf"/>
+                            <constraint firstAttribute="trailing" secondItem="hDv-nG-A9f" secondAttribute="trailing" id="svL-SL-Pat"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLs-uE-Q96" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="e4T-Za-ege" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2179" y="1030"/>
+            <point key="canvasLocation" x="2229" y="1030"/>
         </scene>
         <!--BlueVC-->
         <scene sceneID="NJn-QR-gpI">
@@ -91,52 +128,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwG-yG-c9U">
-                                <rect key="frame" x="200" y="278" width="200" height="44"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="UNo-jm-0jb">
+                                <rect key="frame" x="200" y="174" width="200" height="252"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcK-PM-hPb">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="CeG-Lc-jSK"/>
+                                            <constraint firstAttribute="height" constant="44" id="tzC-pL-pFD"/>
+                                        </constraints>
+                                        <state key="normal" title="Yellow &gt;">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToYellowVC:" destination="JPA-NK-g3R" eventType="touchUpInside" id="bWg-iO-jsU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-R5-aEQ">
+                                        <rect key="frame" x="0.0" y="104" width="200" height="44"/>
+                                        <color key="backgroundColor" red="0.61176472900000001" green="0.77647066119999997" blue="0.32549020649999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="cak-gO-6gW"/>
+                                            <constraint firstAttribute="width" constant="200" id="wLM-4R-td6"/>
+                                        </constraints>
+                                        <state key="normal" title="&lt; Unwind to Green">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="b3h-I6-6w4" kind="unwind" identifier="UnwindBlueToGreenSegueID" unwindAction="unwindToGreenVC:" id="adC-zc-JHX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwG-yG-c9U">
+                                        <rect key="frame" x="0.0" y="208" width="200" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.36600776010000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Cat-5h-2D1"/>
+                                            <constraint firstAttribute="width" constant="200" id="CyL-z9-OJN"/>
+                                            <constraint firstAttribute="height" constant="44" id="P7g-A0-6WX"/>
+                                            <constraint firstAttribute="width" constant="200" id="dum-uW-kKJ"/>
+                                        </constraints>
+                                        <state key="normal" title="&lt; Unwind to Red">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="P7g-A0-6WX"/>
+                                                <exclude reference="dum-uW-kKJ"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="b3h-I6-6w4" kind="unwind" identifier="UnwindBlueToRedSegueID" unwindAction="unwindToRedVC:" id="oEB-vm-8XT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jlg-Ay-CIB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Cat-5h-2D1"/>
-                                    <constraint firstAttribute="width" constant="200" id="CyL-z9-OJN"/>
-                                    <constraint firstAttribute="height" constant="44" id="P7g-A0-6WX"/>
-                                    <constraint firstAttribute="width" constant="200" id="dum-uW-kKJ"/>
+                                    <constraint firstAttribute="height" constant="66" id="ZY2-0z-3NL"/>
                                 </constraints>
-                                <state key="normal" title="To Red">
-                                    <color key="titleColor" red="1" green="0.36600776010000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="P7g-A0-6WX"/>
-                                        <exclude reference="dum-uW-kKJ"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="b3h-I6-6w4" kind="unwind" unwindAction="unwindToRedVC:" id="oEB-vm-8XT"/>
-                                </connections>
-                            </button>
+                                <items>
+                                    <navigationItem title="Blue" id="Q64-rO-HCD"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="FwG-yG-c9U" firstAttribute="centerY" secondItem="GCn-dv-57l" secondAttribute="centerY" id="8Aw-Dw-YFP"/>
-                            <constraint firstItem="FwG-yG-c9U" firstAttribute="centerX" secondItem="GCn-dv-57l" secondAttribute="centerX" id="RhU-ma-zWi"/>
-                            <constraint firstItem="FwG-yG-c9U" firstAttribute="centerY" secondItem="GCn-dv-57l" secondAttribute="centerY" id="dcs-08-2C7"/>
-                            <constraint firstItem="FwG-yG-c9U" firstAttribute="centerX" secondItem="GCn-dv-57l" secondAttribute="centerX" id="xnH-Em-MIs"/>
+                            <constraint firstItem="Jlg-Ay-CIB" firstAttribute="leading" secondItem="GCn-dv-57l" secondAttribute="leading" id="F7i-Ni-8XR"/>
+                            <constraint firstAttribute="trailing" secondItem="Jlg-Ay-CIB" secondAttribute="trailing" id="LUy-w5-Ymh"/>
+                            <constraint firstItem="Jlg-Ay-CIB" firstAttribute="top" secondItem="GCn-dv-57l" secondAttribute="top" id="ZQE-fZ-ndl"/>
+                            <constraint firstItem="UNo-jm-0jb" firstAttribute="centerY" secondItem="GCn-dv-57l" secondAttribute="centerY" id="i8y-uh-Ibx"/>
+                            <constraint firstItem="UNo-jm-0jb" firstAttribute="centerX" secondItem="GCn-dv-57l" secondAttribute="centerX" id="yzN-F7-MqN"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="RhU-ma-zWi"/>
-                                <exclude reference="dcs-08-2C7"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <segue destination="oUN-RJ-6ml" kind="show" id="Zpe-3v-tN1"/>
+                        <segue destination="oUN-RJ-6ml" kind="presentation" modalTransitionStyle="crossDissolve" id="Zpe-3v-tN1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="858-zt-FCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="b3h-I6-6w4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2866" y="1030"/>
+            <point key="canvasLocation" x="2958" y="1030"/>
         </scene>
         <!--YellowVC-->
         <scene sceneID="Y3C-PX-K28">
@@ -152,7 +226,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-yQ-LxT" userLabel="To Red">
                                 <rect key="frame" x="200" y="278" width="200" height="44"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.36600776010000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="XKy-qc-Gs3"/>
                                     <constraint firstAttribute="height" constant="44" id="cbn-Xi-OU3"/>
@@ -160,7 +234,7 @@
                                     <constraint firstAttribute="width" secondItem="cdn-yQ-LxT" secondAttribute="height" multiplier="50:11" id="vep-B6-4JN"/>
                                 </constraints>
                                 <state key="normal" title="To Red">
-                                    <color key="titleColor" red="1" green="0.36600776010000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -169,17 +243,29 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="pLf-Ft-DZy" kind="unwind" unwindAction="unwindToRedVC:" id="5H4-dh-E2u"/>
+                                    <segue destination="pLf-Ft-DZy" kind="unwind" identifier="UnwindYellowToRedSegueID" unwindAction="unwindToRedVC:" id="5H4-dh-E2u"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g40-D0-DHX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qNq-3G-pTM"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="eUN-Sm-1iN"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cdn-yQ-LxT" firstAttribute="centerY" secondItem="iBS-Np-VrQ" secondAttribute="centerY" id="JuM-9C-eet"/>
+                            <constraint firstAttribute="trailing" secondItem="g40-D0-DHX" secondAttribute="trailing" id="O4I-p1-qgT"/>
                             <constraint firstItem="cdn-yQ-LxT" firstAttribute="centerX" secondItem="iBS-Np-VrQ" secondAttribute="centerX" id="Rc2-Mh-APk"/>
                             <constraint firstItem="cdn-yQ-LxT" firstAttribute="width" secondItem="iBS-Np-VrQ" secondAttribute="width" id="SjV-Su-ffr"/>
                             <constraint firstItem="cdn-yQ-LxT" firstAttribute="centerY" secondItem="iBS-Np-VrQ" secondAttribute="centerY" id="aIU-6d-neK"/>
                             <constraint firstItem="cdn-yQ-LxT" firstAttribute="centerX" secondItem="iBS-Np-VrQ" secondAttribute="centerX" id="h4E-Ij-sZe"/>
+                            <constraint firstItem="g40-D0-DHX" firstAttribute="leading" secondItem="iBS-Np-VrQ" secondAttribute="leading" id="phP-Db-gqr"/>
+                            <constraint firstItem="g40-D0-DHX" firstAttribute="top" secondItem="iBS-Np-VrQ" secondAttribute="top" id="sXY-7D-7Zq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -193,7 +279,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4J-R1-u2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pLf-Ft-DZy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3562" y="1030"/>
+            <point key="canvasLocation" x="3663" y="1030"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r0k-ux-LlY">

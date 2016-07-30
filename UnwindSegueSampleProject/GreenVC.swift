@@ -11,8 +11,9 @@ import Foundation
 import UIKit
 
 class GreenVC: UIViewController {
-    func unwindToRedVC(segue: UIStoryboardSegue) {
-    
-
+    @IBAction func unwindToGreenVC(unwindSegue: UIStoryboardSegue) {
+        if unwindSegue.sourceViewController is BlueVC {
+            print("Coming from Blue")
+        }
     }
 }

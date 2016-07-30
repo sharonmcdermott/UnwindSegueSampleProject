@@ -27,28 +27,21 @@ class BlueVC: UIViewController {
     // Before the unwind segue is performed, the action method is called
     
     
-    
-    @IBAction func goToGreenVC(segue: UIStoryboardSegue) {
-        
+    @IBAction func goToYellowVC(sender: UIButton) {
     }
     
+
+    
+    @IBAction func unwindToGreenVC(unwindSegue: UIStoryboardSegue) {
+        if unwindSegue.sourceViewController is BlueVC {
+            print("Coming from Blue")
+        } else {
+            print("")
+        }
+    }
     
     @IBAction func unwindToRedVC(segue: UIStoryboardSegue) {
-//        if let blueVC = unwindSegue.sourceVC as ? BlueVC {
-//            printLn("Coming from Blue")
-//        }
-//        else if let redVC = unwindSegue.sourceVC as ? RedVC {
-//            printLn("Coming from RED")
-//        }
     }
-    
-    @IBAction func unwindToGreenVC(segue: UIStoryboardSegue) {
-    }
-    
-    @IBAction func unwindToBlueVC(segue: UIStoryboardSegue) {
-    }
-
-
 
 }
 

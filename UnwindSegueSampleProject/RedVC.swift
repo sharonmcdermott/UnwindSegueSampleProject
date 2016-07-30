@@ -12,12 +12,12 @@ import UIKit
 
 class RedVC: UIViewController {
     
-    @IBAction func unwindToRedVC(segue: UIStoryboardSegue) {
-        //        if let blueVC = unwindSegue.sourceVC as ? BlueVC {
-        //            printLn("Coming from Blue")
-        //        }
-        //        else if let redVC = unwindSegue.sourceVC as ? RedVC {
-        //            printLn("Coming from RED")
-        //        }
+    @IBAction func unwindToRedVC(unwindSegue: UIStoryboardSegue) {
+        if unwindSegue.sourceViewController is BlueVC {
+            print("Coming from Blue")
+        }
+        else if unwindSegue.sourceViewController is GreenVC {
+            print("Coming from Green")
+        }
     }
 }

@@ -60,12 +60,12 @@
 			children = (
 				806EA8691D1D849D0063BDCD /* AppDelegate.swift */,
 				806EA86B1D1D849D0063BDCD /* BlueVC.swift */,
+				800DF6BC1D1F3455004A32EB /* GreenVC.swift */,
+				800DF6BA1D1F0808004A32EB /* RedVC.swift */,
 				806EA86D1D1D849D0063BDCD /* Main.storyboard */,
 				806EA8701D1D849D0063BDCD /* Assets.xcassets */,
 				806EA8721D1D849D0063BDCD /* LaunchScreen.storyboard */,
 				806EA8751D1D849D0063BDCD /* Info.plist */,
-				800DF6BA1D1F0808004A32EB /* RedVC.swift */,
-				800DF6BC1D1F3455004A32EB /* GreenVC.swift */,
 			);
 			path = UnwindSegueSampleProject;
 			sourceTree = "<group>";
